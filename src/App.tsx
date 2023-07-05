@@ -1,15 +1,23 @@
+import { useRef } from "react";
 import CutList from "./components/CutList";
 import FocusLayer from "./components/FocusLayer";
 import usePageHeight from "./hooks/usePageHeight";
+import useScroll from "./hooks/useScroll";
 import flexStyle from "./style/flex";
 
 function App() {
+  const mainRef = useRef(null);
+  const { y } = useScroll(mainRef);
   const { dividePageHeight } = usePageHeight();
   const height = dividePageHeight(4);
   return (
     <>
       <main className="max-w-screen-sm h-full mx-auto overflow-hidden bg-white">
-        <section className="h-full overflow-y-auto scrollbar-hide">
+        <div>{y}</div>
+        <section
+          ref={mainRef}
+          className="h-full overflow-y-auto scrollbar-hide"
+        >
           <header
             style={{ height: `${height}px` }}
             className={`w-full ${flexStyle.center} relative z-10`}

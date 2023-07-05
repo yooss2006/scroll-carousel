@@ -8,7 +8,7 @@ export default function FocusLayer() {
   return (
     <>
       <div
-        style={{ height: `${height}px` }}
+        style={{ height: `0px` }}
         className={`${commonFocusLayerStyle} top-0`}
       ></div>
       <div

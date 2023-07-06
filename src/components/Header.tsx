@@ -1,20 +1,10 @@
-import React from "react";
-import usePageHeight from "../hooks/usePageHeight";
+import { forwardRef } from "react";
 import flexStyle from "../style/flex";
 
-type Props = {
-  scrollY: number;
-};
-
-export default function Header({ scrollY }: Props) {
-  const { dividePageHeight } = usePageHeight();
-  const height = dividePageHeight(4);
+export default forwardRef(function Header(_, ref: any) {
   return (
-    <header
-      style={{ height: `${height}px` }}
-      className={`w-full ${flexStyle.center} relative z-10`}
-    >
+    <header className={`w-ful h-full bg-red-500 ${flexStyle.center}`} ref={ref}>
       <h1 className="text-red-50">소개</h1>
     </header>
   );
-}
+});

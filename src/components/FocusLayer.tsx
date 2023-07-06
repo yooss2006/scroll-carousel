@@ -1,21 +1,22 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import usePageHeight from "../hooks/usePageHeight";
 
 type Props = {
   scrollY: number;
 };
 
-const commonFocusLayerStyle = `fixed w-full max-w-screen-sm bg-black opacity-70 transition duration-300`;
+const commonFocusLayerStyle =
+  "fixed w-full max-w-screen-sm bg-black opacity-70 transition duration-500";
 
 export default function FocusLayer({ scrollY }: Props) {
   const { dividePageHeight } = usePageHeight();
-  const height = dividePageHeight(4);
+  const pageHeightDividedByFour = dividePageHeight(4);
   const commonInlineStyle = useMemo(
     () => ({
-      height: `${height}px`,
+      height: `${pageHeightDividedByFour}px`,
       transitionTimingFunction: "cubicBezier(0, 0.91, 1, 1)",
     }),
-    [height]
+    [pageHeightDividedByFour]
   );
 
   return (
@@ -23,14 +24,18 @@ export default function FocusLayer({ scrollY }: Props) {
       <div
         style={{
           ...commonInlineStyle,
-          transform: `translateY(-${scrollY >= height ? 0 : height}px)`,
+          transform: `translateY(-${
+            scrollY > 1 ? 0 : pageHeightDividedByFour
+          }px)`,
         }}
         className={`${commonFocusLayerStyle} top-0`}
       ></div>
       <div
         style={{
           ...commonInlineStyle,
-          transform: `translateY(${scrollY >= height ? 0 : height}px)`,
+          transform: `translateY(${
+            scrollY > 1 ? 0 : pageHeightDividedByFour
+          }px)`,
         }}
         className={`${commonFocusLayerStyle} bottom-0`}
       ></div>

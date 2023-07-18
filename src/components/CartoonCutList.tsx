@@ -1,10 +1,20 @@
 import CartoonCut from "./CartoonCut";
+import ScrollSnapContainer from "./ScrollSnapContainer";
 
 export default function CartoonCutList() {
   return (
     <ol>
       <li>
-        <CartoonCut cutStyle="bg-[#FCA039]"></CartoonCut>
+        <CartoonCut>
+          <ScrollSnapContainer>
+            <>
+              <div className="bg-red-500 h-full">Introduce</div>
+              <div className="bg-orange-500 h-full" />
+              <div className="bg-green-500 h-full" />
+              <div className="bg-violet-500 h-full" />
+            </>
+          </ScrollSnapContainer>
+        </CartoonCut>
       </li>
       <li>
         <CartoonCut cutStyle="bg-[#0B5C46]"></CartoonCut>

@@ -11,9 +11,9 @@ export default function Header() {
         height: `${pageHeightDividedByTwo}px`,
         marginTop: `${pageHeightDividedByFour}px`,
       }}
-      className={`w-full bg-red-500 ${flexStyle.center}`}
+      className={`w-full ${flexStyle.center}`}
     >
-      <h1 className="text-red-50">소개</h1>
+      <h1>소개</h1>
     </header>
   );
 }

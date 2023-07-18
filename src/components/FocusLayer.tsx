@@ -19,11 +19,11 @@ export default function FocusLayer() {
       <div
         style={commonInlineStyle}
         className={`${commonFocusLayerStyle} top-0`}
-      ></div>
+      />
       <div
         style={commonInlineStyle}
         className={`${commonFocusLayerStyle} bottom-0`}
-      ></div>
+      />
     </>
   );
 }

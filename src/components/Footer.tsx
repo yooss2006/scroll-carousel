@@ -1,4 +1,5 @@
 import usePageHeight from "../hooks/usePageHeight";
+import flexStyle from "../style/flex";
 
 export default function Footer() {
   const { dividePageHeight } = usePageHeight();
@@ -11,6 +12,9 @@ export default function Footer() {
         height: `${pageHeightDividedByTwo}px`,
         marginBottom: `${pageHeightDividedByFour}px`,
       }}
-    ></footer>
+      className={`w-full ${flexStyle.center}`}
+    >
+      끝
+    </footer>
   );
 }

@@ -13,7 +13,7 @@ export default function Header() {
       }}
       className={`w-full ${flexStyle.center}`}
     >
-      <h1>소개</h1>
+      <h1 className="text-2xl">소개</h1>
     </header>
   );
 }
